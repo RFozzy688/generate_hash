@@ -2,7 +2,8 @@
 {
     public class Md5HashService : IHashService
     {
-        public string Digest(int input) => Convert.ToHexString(
-            System.Security.Cryptography.MD5.HashData(BitConverter.GetBytes(input)));
+        public string Digest(String input) => Convert.ToHexString(
+            System.Security.Cryptography.MD5.HashData(
+                System.Text.Encoding.UTF8.GetBytes(input)));
     }
 }

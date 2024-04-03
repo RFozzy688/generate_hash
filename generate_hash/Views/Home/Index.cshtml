@@ -1,4 +1,5 @@
-﻿@{
+﻿@model generate_hash.Models.Home.HomeIocPageModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -19,6 +20,13 @@
         @using (Html.BeginForm("GenerateFileName", "Home", FormMethod.Post))
         {
             <button type="submit">Generate file name</button>
+        }
+    </div>
+    <div class="box">
+        <span>Crypto salt: <b>@ViewBag.CryptoSalt</b></span>
+        @using (Html.BeginForm("GenerateCryptoSalt", "Home", FormMethod.Post))
+        {
+            <button type="submit">Generate crypto salt</button>
         }
     </div>
 </div>

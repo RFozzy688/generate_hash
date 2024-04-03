@@ -1,4 +1,5 @@
 using generate_hash.Services.Hash;
+using generate_hash.Services.Kdf;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IHashService, Md5HashService>();
+builder.Services.AddSingleton<IKdfService, Pbkdf1Service>();
 
 var app = builder.Build();
 
