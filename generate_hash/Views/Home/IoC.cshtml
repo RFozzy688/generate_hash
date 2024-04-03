@@ -1,0 +1,19 @@
+﻿@model generate_hash.Models.Home.HomeIocPageModel
+@{
+    ViewData["Title"] = "IoC";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Generate hash codes</h1>
+</div>
+<div class="generate-code">
+    <div class="box">
+        <span>Code: <b>@Model.HashVerificationCode</b></span>
+    </div>
+    <div class="box">
+        <span>File name: <b>@Model.HashFileName</b></span>
+    </div>
+    <div class="box">
+        <span>Crypto salt: <b>@Model.KdfCryptoSalt</b></span>
+    </div>
+</div>

@@ -2,7 +2,8 @@
 {
     public class HomeIocPageModel
     {
-        public String HashExample { get; set; } = null!;
-        public String KdfExample { get; set; } = null!;
+        public String HashVerificationCode { get; set; } = null!;
+        public String HashFileName { get; set; } = null!;
+        public String KdfCryptoSalt { get; set; } = null!;
     }
 }

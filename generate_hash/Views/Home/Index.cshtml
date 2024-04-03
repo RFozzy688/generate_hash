@@ -4,31 +4,9 @@
 }
 
 <div class="text-center">
-    <h1>Generate hash codes</h1>
+    <h1>Welcome</h1>
+    
 </div>
-
-<div class="generate-code">
-    <div class="box">
-        <span>Code: <b>@ViewBag.VerificationCode</b></span>
-        @using (Html.BeginForm("GenerateVerificationCode", "Home", FormMethod.Post))
-        {
-            <button type="submit">Generate verification code</button>
-        }
-    </div>
-    <div class="box">
-        <span>File name: <b>@ViewBag.FileName</b></span>
-        @using (Html.BeginForm("GenerateFileName", "Home", FormMethod.Post))
-        {
-            <button type="submit">Generate file name</button>
-        }
-    </div>
-    <div class="box">
-        <span>Crypto salt: <b>@ViewBag.CryptoSalt</b></span>
-        @using (Html.BeginForm("GenerateCryptoSalt", "Home", FormMethod.Post))
-        {
-            <button type="submit">Generate crypto salt</button>
-        }
-    </div>
-</div>
+<a asp-controller="Home" asp-action="IoC">Code</a>
 
 
