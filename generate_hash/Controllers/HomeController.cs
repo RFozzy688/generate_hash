@@ -9,6 +9,8 @@ namespace generate_hash.Controllers
     public class HomeController : Controller
     {
         private readonly IHashService _hashService;
+        Random _random = new Random();
+        HomeIocPageModel _model = new HomeIocPageModel();
 
         public HomeController(IHashService hashService)
         {
@@ -18,16 +20,24 @@ namespace generate_hash.Controllers
         public IActionResult Index()
         {
             ViewBag.VerificationCode = TempData["VerificationCode"];
+            ViewBag.FileName = TempData["FileName"];
+
             return View();
         }
 
         [HttpPost]
         public IActionResult GenerateVerificationCode()
         {
-            int random = new Random().Next(100, 200);
-            HomeIocPageModel model = new HomeIocPageModel();
-            model.HashExample = _hashService.Digest(random);
-            TempData["VerificationCode"] = model.HashExample.ToLower().Remove(6);
+            _model.HashExample = _hashService.Digest(_random.Next(100, 200));
+            TempData["VerificationCode"] = _model.HashExample.ToLower().Remove(6);
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult GenerateFileName()
+        {
+            _model.HashExample = _hashService.Digest(_random.Next(1, 200));
+            TempData["FileName"] = _model.HashExample.ToLower().Remove(10);
 
             return RedirectToAction("Index");
         }

@@ -23,6 +23,7 @@ body {
 .generate-code {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .box {
     display: flex;
@@ -31,5 +32,6 @@ body {
     width: 700px;
     border: 1px solid grey;
     border-radius: 7px;
+    margin-bottom: 20px;
     padding: 30px;
 }
