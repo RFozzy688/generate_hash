@@ -1,7 +1,11 @@
+using generate_hash.Services.Hash;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IHashService, Md5HashService>();
 
 var app = builder.Build();
 

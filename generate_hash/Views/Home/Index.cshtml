@@ -3,5 +3,15 @@
 }
 
 <div class="text-center">
-    
+    <h1>Generate hash codes</h1>
 </div>
+<div class="generate-code">
+    <div class="box">
+        <span>Code: <b>@ViewBag.VerificationCode</b></span>
+        @using (Html.BeginForm("GenerateVerificationCode", "Home", FormMethod.Post))
+        {
+            <button type="submit">Generate verification code</button>
+        }
+    </div>
+</div>
+
